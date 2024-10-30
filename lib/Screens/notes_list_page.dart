@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
-
 import '../models/note_model.dart';
 import 'edit_note.dart';
 
@@ -10,15 +9,6 @@ class NotesList extends StatelessWidget {
 
   void deleteNote(int index) {
     notesBox.deleteAt(index);
-  }
-
-  void _openEditNoteView(BuildContext context, NoteModel note) {
-    showModalBottomSheet(
-      context: context,
-      builder: (context) {
-        return EditNoteView();
-      },
-    );
   }
 
   @override
@@ -31,7 +21,6 @@ class NotesList extends StatelessWidget {
             child: Text('No Notes yet!'),
           );
         }
-
         return GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
@@ -44,9 +33,8 @@ class NotesList extends StatelessWidget {
             return GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return EditNoteView();
+                  return  EditNoteView();
                 },));
-
               },
               child: Container(
                 padding: const EdgeInsets.all(8.0),

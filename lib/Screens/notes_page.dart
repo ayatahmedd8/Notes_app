@@ -34,11 +34,6 @@ class _NotesPageState extends State<NotesPage> {
     notesBox?.add(newNote);
     setState(() {});
 
-    // Show a success message
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text('Note added successfully!')),
-    );
-
   }
 
 
